@@ -1,9 +1,12 @@
 package cronapi.watson.visual_recognition;
 
 import com.ibm.watson.developer_cloud.natural_language_understanding.v1.NaturalLanguageUnderstanding;
-import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.*;
+import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.AnalysisResults;
+import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.AnalyzeOptions;
+import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.DeleteModelOptions;
+import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.ListModelsOptions;
+import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.ListModelsResults;
 import cronapi.CronapiMetaData;
-
 import java.util.Map;
 
 @CronapiMetaData(categoryName = "Watson Natural Language Understanding",
@@ -14,8 +17,9 @@ public final class NaturalLanguageUnderstandingOperations {
       name = "{{analyzeName}}",
       description = "{{analyzeDescription}}"
   )
-  public static AnalysisResults analyze(String versionDate, String username, String password, String endPoint,
-                                        Map<String, String> headers, AnalyzeOptions options) {
+  public static AnalysisResults analyze(String versionDate, String username, String password,
+      String endPoint,
+      Map<String, String> headers, AnalyzeOptions options) {
     NaturalLanguageUnderstanding service = new NaturalLanguageUnderstanding(versionDate);
     service.setUsernameAndPassword(username, password);
     service.setEndPoint(endPoint);
@@ -27,8 +31,9 @@ public final class NaturalLanguageUnderstandingOperations {
       name = "{{deleteModelName}}",
       description = "{{deleteModelDescription}}"
   )
-  public static void deleteModel(String versionDate, String username, String password, String endPoint,
-                                 Map<String, String> headers, DeleteModelOptions options) {
+  public static void deleteModel(String versionDate, String username, String password,
+      String endPoint,
+      Map<String, String> headers, DeleteModelOptions options) {
     NaturalLanguageUnderstanding service = new NaturalLanguageUnderstanding(versionDate);
     service.setUsernameAndPassword(username, password);
     service.setEndPoint(endPoint);
@@ -41,8 +46,9 @@ public final class NaturalLanguageUnderstandingOperations {
       name = "{{listModelsModelName}}",
       description = "{{listModelsModelDescription}}"
   )
-  public static ListModelsResults listModels(String versionDate, String username, String password, String endPoint,
-                                             Map<String, String> headers, ListModelsOptions options) {
+  public static ListModelsResults listModels(String versionDate, String username, String password,
+      String endPoint,
+      Map<String, String> headers, ListModelsOptions options) {
     NaturalLanguageUnderstanding service = new NaturalLanguageUnderstanding(versionDate);
     service.setUsernameAndPassword(username, password);
     service.setEndPoint(endPoint);
